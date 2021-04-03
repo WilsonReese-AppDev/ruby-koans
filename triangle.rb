@@ -19,7 +19,7 @@ def triangle(a, b, c)
   end
 
   if a + b <= c || a + c <= b || b + c <= a
-    raise TriangleError, "Sum of shortest sides must be greater than longest side"
+    raise TriangleError, "Sum of shortest sides must be greater than or equal to the longest side"
   end
 
   if a == b && b == c
