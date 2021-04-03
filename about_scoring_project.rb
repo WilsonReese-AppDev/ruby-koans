@@ -60,11 +60,7 @@ def score(dice)
     end
   end
 
-return points
-
-
-  # need to check for ones, number times 100
-  # need to check for fives, number times 50
+  return points
 
 end
 
