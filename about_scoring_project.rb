@@ -31,6 +31,41 @@ require File.expand_path(File.dirname(__FILE__) + '/neo')
 
 def score(dice)
   # You need to write this method
+  # need to check if the array has 3 ones, if so add 1000 points and take them out
+  # points = 0
+  # ones_array = dice.find_all { |item| item == 1 }
+  # if ones_array.length = 3
+  #   points += 1000
+  #   dice = dice - ones_array
+  # end
+
+  # need to check if the array has 3 others (all but 1), if so add # * 100 and take them out
+  points = 0
+  tally = dice.tally
+  tally.each do |key, value|
+    if value >= 3
+      if key == 1
+        points += 1000
+      else
+        points += key * 100
+      end
+    value -=3
+    end
+    if value > 0
+      if key == 1
+        points += value * 100
+      elsif key == 5
+        points += value * 50
+      end
+    end
+  end
+
+return points
+
+
+  # need to check for ones, number times 100
+  # need to check for fives, number times 50
+
 end
 
 class AboutScoringProject < Neo::Koan
